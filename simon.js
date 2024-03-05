@@ -21,16 +21,18 @@ $(document).on("keypress",()=>{
 
 
 //capture the button user clicked and store
-$(".btn").on("click",function(event){
-    var userChosenColour = (event.currentTarget.id);
-    playButtonSound(userChosenColour);
-    animatePress(userChosenColour);
-    userSequence.push(userChosenColour);
-
-    CompareColors(userSequence.length - 1);
+if(started){
+    $(".btn").on("click",function(event){
+        var userChosenColour = (event.currentTarget.id);
+        playButtonSound(userChosenColour);
+        animatePress(userChosenColour);
+        userSequence.push(userChosenColour);
     
-    
-});
+        CompareColors(userSequence.length - 1);
+        
+        
+    });    
+}
 
 
 function CompareColors(position){
